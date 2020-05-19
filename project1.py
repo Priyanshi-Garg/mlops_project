@@ -42,7 +42,7 @@ model.add(Convolution2D(filters=2,  kernel_size=(5,5),  activation='relu', input
 
 model.add(MaxPooling2D(pool_size=(5,5) , strides=(2,2)))
 
-model.add(Convolution2D(filters=15,  kernel_size=(3,3),  activation='relu' ))
+model.add(Convolution2D(filters=5,  kernel_size=(4,4),  activation='relu' ))
 
 model.add(MaxPooling2D(pool_size=(3,3) , strides=(2,2)))
 
@@ -63,11 +63,6 @@ history = model.fit(x_train, y_train,
           epochs=epochs,
           validation_data=(x_test, y_test),
           )
-model.save("mnist.h5")
-
-scores = model.evaluate(x_test, y_test, verbose=1)
-print('Test loss:', scores[0])
-print('Test accuracy:', scores[1])
 
 
 
