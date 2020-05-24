@@ -63,16 +63,11 @@ trained_model = model.fit(x_train, y_train,
           epochs=epochs,
           validation_data=(x_test, y_test),
           )
-test = trained_model.history
-a = test["accuracy"]
-accuracy = (a[0])
-accuracy = accuracy*100
-f = open("model_acc.txt","w+")
-f.write(str(accuracy))
-f.close
-f = open("model_acc.txt" , "r")
-accuracy = f.read()
-print(accuracy)
+import sys
+sys.stdout=open("model_acc.txt" , "w")
+print(int(trained_model.history['accuracy'][-1]*100))
+sys.stdout.close()
+
 
 
 
