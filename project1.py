@@ -64,7 +64,7 @@ trained_model = model.fit(x_train, y_train,
           validation_data=(x_test, y_test),
           )
 import sys
-sys.stdout=open("model_acc.txt" , "w")
+sys.stdout=open("acc.txt" , "w")
 print(int(trained_model.history['accuracy'][-1]*100))
 sys.stdout.close()
 
