@@ -59,6 +59,7 @@ model.compile(loss = 'categorical_crossentropy',
 print(model.summary())
 
 epochs=1
+
 trained_model = model.fit(x_train, y_train,
          
           epochs=epochs,
