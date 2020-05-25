@@ -38,11 +38,13 @@ y_train.shape
 
 model = Sequential()
 
-model.add(Convolution2D(filters=2,  kernel_size=(5,5),  activation='relu', input_shape=input_shape ))
+import variables
+
+model.add(Convolution2D(filters=variables.filter_no,  kernel_size=(5,5),  activation='relu', input_shape=input_shape ))
 
 model.add(MaxPooling2D(pool_size=(5,5) , strides=(2,2)))
 
-model.add(Convolution2D(filters=5,  kernel_size=(4,4),  activation='relu' ))
+model.add(Convolution2D(filters=variables.filter_no ,  kernel_size=(4,4),  activation='relu' ))
 
 model.add(MaxPooling2D(pool_size=(3,3) , strides=(2,2)))
 
@@ -56,11 +58,9 @@ model.compile(loss = 'categorical_crossentropy',
               metrics = ['accuracy'])
     
 print(model.summary())
-
-epochs = 1
 trained_model = model.fit(x_train, y_train,
          
-          epochs=epochs,
+          epochs=variables.epoch_no,
           validation_data=(x_test, y_test),
           )
 import sys
