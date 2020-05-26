@@ -20,7 +20,7 @@ y_train = np_utils.to_categorical(y_train)
 y_test = np_utils.to_categorical(y_test)
 y_train.shape
 model = Sequential()
-filters=filters+1
+filters=filters+2
 model.add(Convolution2D(filters=filters,  kernel_size=(5,5),  activation='relu', input_shape=input_shape ))
 model.add(MaxPooling2D(pool_size=(5,5) , strides=(2,2)))
 model.add(Convolution2D(filters=filters ,  kernel_size=(4,4),  activation='relu' ))
