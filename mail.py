@@ -6,7 +6,7 @@ port = 465 # FOR SSL
 smtp_server = "smtp.gmail.com"
 sender_email = "gargpriyanshi39@gmail.com"
 reciever_email = "gargpriyanshi39@gmail.com"
-password = <user_password>
+password = <gmailpriyanshi>
 message = """\
 Subject: Mlops_project
 
