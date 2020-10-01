@@ -1,5 +1,6 @@
 from keras.datasets import mnist
 import numpy as np
+from tensorflow.keras import layers
 from keras.layers import Convolution2D
 from keras.layers import MaxPooling2D
 from keras.layers import Flatten
@@ -26,7 +27,7 @@ model.add(MaxPooling2D(pool_size=(5,5) , strides=(2,2)))
 model.add(Convolution2D(filters=filters ,  kernel_size=(4,4),  activation='relu' ))
 model.add(MaxPooling2D(pool_size=(3,3) , strides=(2,2)))
 model.add(Flatten())
-model.add(Dense(units=50, activation='relu'))
+model.add(Dense(units=100, activation='relu'))
 model.add(Dense(units=y_train.shape[1], activation='softmax'))
 model.compile(loss = 'categorical_crossentropy',
               optimizer = 'adam',
